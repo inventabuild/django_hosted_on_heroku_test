@@ -14,8 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
 
 urlpatterns = [
+    #path('django_hosted_on_heroku_test', include('test_project_manager.urls'), name='django_hosted_on_heroku_test'),
+    path('url_path/', include('invoice_manager.urls'), name='invoice_manager'),
+    path('', include('home.urls'), name='home'),
     path('admin/', admin.site.urls),
 ]
